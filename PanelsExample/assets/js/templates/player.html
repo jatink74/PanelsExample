@@ -1,0 +1,18 @@
+<td>
+    <input type=text name="firstName" value="<%= model.get('firstName') %>" />
+</td>            
+<td>
+    <input type=text name="lastName" value="<%= model.get('lastName') %>" />
+</td>
+<td>
+    <select id="game-selector">
+        <% _.each(games, function(game, itr) { %>
+        <option value="<%= itr %>"
+            <% if (model.get('game') == itr ) { %> selected <% }  %>
+            ><%= game %></option>
+        <% }); %>
+    </select>
+
+    <input type="button" class="deletePlayer" value="Delete" />
+
+</td>
